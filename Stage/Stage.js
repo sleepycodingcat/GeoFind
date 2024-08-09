@@ -33,14 +33,29 @@ export default class Stage extends StageBase {
         { name: "New Game" },
         this.whenIReceiveNewGame
       ),
+      new Trigger(
+        Trigger.BROADCAST,
+        { name: "Game over" },
+        this.whenIReceiveGameOver
+      ),
     ];
+
+    this.vars.question = 0;
+    this.vars.correct = "i2";
   }
 
   *whenGreenFlagClicked() {
+    this.vars.question = 0;
     this.costume = "Title page";
+    this.vars.correct = 0;
   }
 
   *whenIReceiveNewGame() {
     this.costume = "Main page";
+    this.vars.correct = "i2";
+  }
+
+  *whenIReceiveGameOver() {
+    this.costume = "Title page";
   }
 }

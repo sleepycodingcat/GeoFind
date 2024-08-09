@@ -51,6 +51,7 @@ export default class Play extends Sprite {
     yield* this.startSound("click");
     this.effects.brightness = 100;
     this.broadcast("New Game");
+    this.stage.vars.question = "Q1";
     /* TODO: Implement stop other scripts in sprite */ null;
     for (let i = 0; i < 10; i++) {
       this.effects.brightness -= 10;
