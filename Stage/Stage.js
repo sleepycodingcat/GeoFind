@@ -46,13 +46,25 @@ export default class Stage extends StageBase {
     ];
 
     this.vars.question = "Q1";
-    this.vars.correct = "i2";
+    this.vars.health = 4;
+    this.vars.Timer = 5.016;
+    this.vars.gameover = "no";
+
+    this.watchers.health = new Watcher({
+      label: "Health",
+      style: "normal",
+      visible: true,
+      value: () => this.vars.health,
+      x: 245,
+      y: 175,
+    });
   }
 
   *whenGreenFlagClicked() {
     this.vars.question = 0;
+    this.vars.health = 4;
+    this.vars.gameover = "no";
     this.costume = "Title page";
-    this.vars.correct = 0;
     while (true) {
       yield* this.playSoundUntilDone("8-bit-arcade-mode-158814");
       yield;
@@ -61,7 +73,6 @@ export default class Stage extends StageBase {
 
   *whenIReceiveNewGame() {
     this.costume = "Main page";
-    this.vars.correct = "i2";
   }
 
   *whenIReceiveGameOver() {

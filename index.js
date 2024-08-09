@@ -23,7 +23,7 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
-    size: 93.970704583,
+    size: 108.21746408600002,
     visible: true,
     layerOrder: 1,
   }),
@@ -44,7 +44,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 4,
   }),
   Input1: new Input1({
@@ -54,7 +54,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.DONT_ROTATE,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 6,
   }),
   Input2: new Input2({
@@ -64,7 +64,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 8,
   }),
   Input3: new Input3({
@@ -74,7 +74,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 9,
   }),
   Input4: new Input4({
@@ -84,7 +84,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 5,
   }),
   Layer: new Layer({
@@ -94,7 +94,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 2,
   }),
   System: new System({
@@ -102,9 +102,9 @@ const sprites = {
     y: 0,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 2,
+    costumeNumber: 1,
     size: 100,
-    visible: false,
+    visible: true,
     layerOrder: 7,
   }),
 };

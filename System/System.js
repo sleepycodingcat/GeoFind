@@ -26,6 +26,10 @@ export default class System extends Sprite {
         x: 151.1047151740495,
         y: -105.85110161852356,
       }),
+      new Costume("costume4", "./System/costumes/costume4.svg", {
+        x: 107.48999501056372,
+        y: -108.53091305919969,
+      }),
     ];
 
     this.sounds = [
@@ -57,6 +61,7 @@ export default class System extends Sprite {
     this.visible = true;
     yield* this.wait(1);
     this.visible = false;
+    this.stage.vars.health--;
   }
 
   *whenIReceiveRight() {
@@ -68,7 +73,12 @@ export default class System extends Sprite {
   }
 
   *whenIReceiveGameOver() {
-    this.costume = "costume3";
-    this.visible = true;
+    if (this.toString(this.stage.vars.gameover) === "yes") {
+      this.costume = "costume4";
+      this.visible = true;
+    } else {
+      this.costume = "costume3";
+      this.visible = true;
+    }
   }
 }
