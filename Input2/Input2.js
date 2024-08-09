@@ -53,7 +53,7 @@ export default class Input2 extends Sprite {
         this.mouse.down &&
         this.touching("mouse")
       ) {
-        this.broadcast("right");
+        this.broadcast("wrong");
         this.broadcast("blink");
         yield* this.wait(1);
         this.stage.vars.question = "Q3";
@@ -71,7 +71,7 @@ export default class Input2 extends Sprite {
         this.mouse.down &&
         this.touching("mouse")
       ) {
-        this.broadcast("right");
+        this.broadcast("wrong");
         this.broadcast("blink");
         yield* this.wait(1);
         this.stage.vars.question = "Q2";
@@ -137,7 +137,7 @@ export default class Input2 extends Sprite {
         this.mouse.down &&
         this.touching("mouse")
       ) {
-        this.broadcast("right");
+        this.broadcast("wrong");
         this.broadcast("blink");
         yield* this.wait(1);
         this.stage.vars.question = "";

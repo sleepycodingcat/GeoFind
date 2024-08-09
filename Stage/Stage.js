@@ -24,7 +24,12 @@ export default class Stage extends StageBase {
       }),
     ];
 
-    this.sounds = [new Sound("pop", "./Stage/sounds/pop.wav")];
+    this.sounds = [
+      new Sound(
+        "8-bit-arcade-mode-158814",
+        "./Stage/sounds/8-bit-arcade-mode-158814.wav"
+      ),
+    ];
 
     this.triggers = [
       new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked),
@@ -40,7 +45,7 @@ export default class Stage extends StageBase {
       ),
     ];
 
-    this.vars.question = 0;
+    this.vars.question = "Q1";
     this.vars.correct = "i2";
   }
 
@@ -48,6 +53,10 @@ export default class Stage extends StageBase {
     this.vars.question = 0;
     this.costume = "Title page";
     this.vars.correct = 0;
+    while (true) {
+      yield* this.playSoundUntilDone("8-bit-arcade-mode-158814");
+      yield;
+    }
   }
 
   *whenIReceiveNewGame() {
