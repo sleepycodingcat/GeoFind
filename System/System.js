@@ -33,9 +33,8 @@ export default class System extends Sprite {
     ];
 
     this.sounds = [
-      new Sound("pop", "./System/sounds/pop.wav"),
-      new Sound("Magic Spell", "./System/sounds/Magic Spell.wav"),
-      new Sound("Disconnect", "./System/sounds/Disconnect.wav"),
+      new Sound("right", "./System/sounds/right.wav"),
+      new Sound("disconnect", "./System/sounds/disconnect.wav"),
     ];
 
     this.triggers = [
@@ -57,7 +56,7 @@ export default class System extends Sprite {
 
   *whenIReceiveWrong() {
     this.costume = "costume1";
-    yield* this.startSound("Disconnect");
+    yield* this.startSound("disconnect");
     this.visible = true;
     yield* this.wait(1);
     this.visible = false;
@@ -66,7 +65,7 @@ export default class System extends Sprite {
 
   *whenIReceiveRight() {
     this.costume = "costume2";
-    yield* this.startSound("Magic Spell");
+    yield* this.startSound("right");
     this.visible = true;
     yield* this.wait(1);
     this.visible = false;

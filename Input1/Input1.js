@@ -21,7 +21,7 @@ export default class Input1 extends Sprite {
       new Costume("Q5", "./Input1/costumes/Q5.svg", { x: 98.5, y: 41 }),
     ];
 
-    this.sounds = [new Sound("Click", "./Input1/sounds/Click.wav")];
+    this.sounds = [new Sound("click", "./Input1/sounds/click.wav")];
 
     this.triggers = [
       new Trigger(Trigger.GREEN_FLAG, this.whenGreenFlagClicked),
@@ -45,6 +45,7 @@ export default class Input1 extends Sprite {
 
   *whenGreenFlagClicked() {
     this.visible = false;
+    this.size = 100;
     this.goto(-111, -32);
     while (true) {
       this.costume = this.stage.vars.question;
@@ -55,16 +56,29 @@ export default class Input1 extends Sprite {
   *whenIReceiveNewGame() {
     this.visible = true;
     while (true) {
-      if (
-        this.toString(this.stage.vars.question) === "Q1" &&
-        this.mouse.down &&
-        this.touching("mouse")
-      ) {
-        this.broadcast("wrong");
-        this.broadcast("blink");
-        yield* this.wait(1);
-        this.stage.vars.question = "Q2";
-        this.broadcast("Q2");
+      if (this.toString(this.stage.vars.question) === "Q1") {
+        if (this.touching("mouse")) {
+          this.effects.brightness = 50;
+          while (!(this.size === 115)) {
+            this.size += 5;
+            yield;
+          }
+          if (this.mouse.down) {
+            yield* this.startSound("click");
+            this.broadcast("wrong");
+            this.broadcast("blink");
+            yield* this.wait(1);
+            this.stage.vars.question = "Q2";
+            this.broadcast("Q2");
+          }
+        }
+        if (!this.touching("mouse")) {
+          this.effects.brightness = 0;
+          while (!(this.size === 100)) {
+            this.size -= 5;
+            yield;
+          }
+        }
       }
       yield;
     }
@@ -72,16 +86,29 @@ export default class Input1 extends Sprite {
 
   *whenIReceiveQ2() {
     while (true) {
-      if (
-        this.toString(this.stage.vars.question) === "Q2" &&
-        this.mouse.down &&
-        this.touching("mouse")
-      ) {
-        this.broadcast("wrong");
-        this.broadcast("blink");
-        yield* this.wait(1);
-        this.stage.vars.question = "Q3";
-        this.broadcast("Q3");
+      if (this.toString(this.stage.vars.question) === "Q2") {
+        if (this.touching("mouse")) {
+          this.effects.brightness = 50;
+          while (!(this.size === 115)) {
+            this.size += 5;
+            yield;
+          }
+          if (this.mouse.down) {
+            yield* this.startSound("click");
+            this.broadcast("wrong");
+            this.broadcast("blink");
+            yield* this.wait(1);
+            this.stage.vars.question = "Q3";
+            this.broadcast("Q3");
+          }
+        }
+        if (!this.touching("mouse")) {
+          this.effects.brightness = 0;
+          while (!(this.size === 100)) {
+            this.size -= 5;
+            yield;
+          }
+        }
       }
       yield;
     }
@@ -95,16 +122,29 @@ export default class Input1 extends Sprite {
 
   *whenIReceiveQ3() {
     while (true) {
-      if (
-        this.toString(this.stage.vars.question) === "Q3" &&
-        this.mouse.down &&
-        this.touching("mouse")
-      ) {
-        this.broadcast("right");
-        this.broadcast("blink");
-        yield* this.wait(1);
-        this.stage.vars.question = "Q4";
-        this.broadcast("4");
+      if (this.toString(this.stage.vars.question) === "Q3") {
+        if (this.touching("mouse")) {
+          this.effects.brightness = 50;
+          while (!(this.size === 115)) {
+            this.size += 5;
+            yield;
+          }
+          if (this.mouse.down) {
+            yield* this.startSound("click");
+            this.broadcast("right");
+            this.broadcast("blink");
+            yield* this.wait(1);
+            this.stage.vars.question = "Q4";
+            this.broadcast("4");
+          }
+        }
+        if (!this.touching("mouse")) {
+          this.effects.brightness = 0;
+          while (!(this.size === 100)) {
+            this.size -= 5;
+            yield;
+          }
+        }
       }
       yield;
     }
@@ -112,16 +152,29 @@ export default class Input1 extends Sprite {
 
   *whenIReceive4() {
     while (true) {
-      if (
-        this.toString(this.stage.vars.question) === "Q4" &&
-        this.mouse.down &&
-        this.touching("mouse")
-      ) {
-        this.broadcast("wrong");
-        this.broadcast("blink");
-        yield* this.wait(1);
-        this.stage.vars.question = "Q5";
-        this.broadcast("Q5");
+      if (this.toString(this.stage.vars.question) === "Q4") {
+        if (this.touching("mouse")) {
+          this.effects.brightness = 50;
+          while (!(this.size === 115)) {
+            this.size += 5;
+            yield;
+          }
+          if (this.mouse.down) {
+            yield* this.startSound("click");
+            this.broadcast("wrong");
+            this.broadcast("blink");
+            yield* this.wait(1);
+            this.stage.vars.question = "Q5";
+            this.broadcast("Q5");
+          }
+        }
+        if (!this.touching("mouse")) {
+          this.effects.brightness = 0;
+          while (!(this.size === 100)) {
+            this.size -= 5;
+            yield;
+          }
+        }
       }
       yield;
     }
@@ -129,16 +182,29 @@ export default class Input1 extends Sprite {
 
   *whenIReceiveQ5() {
     while (true) {
-      if (
-        this.toString(this.stage.vars.question) === "Q5" &&
-        this.mouse.down &&
-        this.touching("mouse")
-      ) {
-        this.broadcast("wrong");
-        this.broadcast("blink");
-        yield* this.wait(1);
-        this.stage.vars.question = "";
-        this.broadcast("Game over");
+      if (this.toString(this.stage.vars.question) === "Q5") {
+        if (this.touching("mouse")) {
+          this.effects.brightness = 50;
+          while (!(this.size === 115)) {
+            this.size += 5;
+            yield;
+          }
+          if (this.mouse.down) {
+            yield* this.startSound("click");
+            this.broadcast("wrong");
+            this.broadcast("blink");
+            yield* this.wait(1);
+            this.stage.vars.question = "";
+            this.broadcast("Game over");
+          }
+        }
+        if (!this.touching("mouse")) {
+          this.effects.brightness = 0;
+          while (!(this.size === 100)) {
+            this.size -= 5;
+            yield;
+          }
+        }
       }
       yield;
     }

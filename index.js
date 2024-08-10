@@ -14,7 +14,7 @@ import Input4 from "./Input4/Input4.js";
 import Layer from "./Layer/Layer.js";
 import System from "./System/System.js";
 
-const stage = new Stage({ costumeNumber: 2 });
+const stage = new Stage({ costumeNumber: 1 });
 
 const sprites = {
   Play: new Play({
@@ -23,9 +23,9 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
-    size: 108.21746408600002,
+    size: 97.452292743,
     visible: true,
-    layerOrder: 1,
+    layerOrder: 2,
   }),
   Health: new Health({
     x: -123,
@@ -34,7 +34,7 @@ const sprites = {
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 3,
   }),
   Question: new Question({
@@ -42,7 +42,7 @@ const sprites = {
     y: 0,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 1,
+    costumeNumber: 5,
     size: 100,
     visible: false,
     layerOrder: 4,
@@ -52,7 +52,7 @@ const sprites = {
     y: -32,
     direction: -112.2050681099231,
     rotationStyle: Sprite.RotationStyle.DONT_ROTATE,
-    costumeNumber: 1,
+    costumeNumber: 5,
     size: 100,
     visible: false,
     layerOrder: 6,
@@ -62,7 +62,7 @@ const sprites = {
     y: -32,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 1,
+    costumeNumber: 5,
     size: 100,
     visible: false,
     layerOrder: 8,
@@ -72,7 +72,7 @@ const sprites = {
     y: -130,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 1,
+    costumeNumber: 5,
     size: 100,
     visible: false,
     layerOrder: 9,
@@ -82,7 +82,7 @@ const sprites = {
     y: -130,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 1,
+    costumeNumber: 5,
     size: 100,
     visible: false,
     layerOrder: 5,
@@ -95,16 +95,16 @@ const sprites = {
     costumeNumber: 1,
     size: 100,
     visible: false,
-    layerOrder: 2,
+    layerOrder: 1,
   }),
   System: new System({
     x: 0,
     y: 0,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 1,
+    costumeNumber: 3,
     size: 100,
-    visible: true,
+    visible: false,
     layerOrder: 7,
   }),
 };

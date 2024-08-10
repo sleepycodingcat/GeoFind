@@ -16,7 +16,7 @@ export default class Stage extends StageBase {
     this.costumes = [
       new Costume("Title page", "./Stage/costumes/Title page.svg", {
         x: 241,
-        y: 252.70334,
+        y: 252.70334000000003,
       }),
       new Costume("Main page", "./Stage/costumes/Main page.svg", {
         x: 241,
@@ -45,9 +45,9 @@ export default class Stage extends StageBase {
       ),
     ];
 
-    this.vars.question = "Q1";
+    this.vars.question = 0;
     this.vars.health = 4;
-    this.vars.Timer = 5.016;
+    this.vars.Timer = 0.231;
     this.vars.gameover = "no";
 
     this.watchers.health = new Watcher({
