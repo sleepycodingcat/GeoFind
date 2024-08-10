@@ -15,12 +15,20 @@ export default class Stage extends StageBase {
 
     this.costumes = [
       new Costume("Title page", "./Stage/costumes/Title page.svg", {
-        x: 244.06666056315106,
-        y: 252.70334000000005,
+        x: 241.00000056315105,
+        y: 252.70334000000008,
       }),
       new Costume("Main page", "./Stage/costumes/Main page.svg", {
         x: 241,
-        y: 252.70334000000005,
+        y: 252.70334000000008,
+      }),
+      new Costume("Game OVer ", "./Stage/costumes/Game OVer .svg", {
+        x: 241,
+        y: 235.40422,
+      }),
+      new Costume("Game OVer no hp", "./Stage/costumes/Game OVer no hp.svg", {
+        x: 242.50150206465256,
+        y: 252.70334000000017,
       }),
     ];
 
@@ -43,11 +51,16 @@ export default class Stage extends StageBase {
         { name: "Game over" },
         this.whenIReceiveGameOver
       ),
+      new Trigger(
+        Trigger.BROADCAST,
+        { name: "Game over" },
+        this.whenIReceiveGameOver2
+      ),
     ];
 
     this.vars.question = 0;
     this.vars.health = 4;
-    this.vars.Timer = 51.117;
+    this.vars.Timer = 19.207;
     this.vars.gameover = "no";
     this.vars.score = 0;
   }
@@ -70,5 +83,13 @@ export default class Stage extends StageBase {
 
   *whenIReceiveGameOver() {
     this.costume = "Title page";
+  }
+
+  *whenIReceiveGameOver2() {
+    if (this.toString(this.vars.gameover) === "yes") {
+      this.costume = "Game OVer no hp";
+    } else {
+      this.costume = "Game OVer ";
+    }
   }
 }

@@ -15,7 +15,7 @@ import Layer from "./Layer/Layer.js";
 import System from "./System/System.js";
 import Score from "./Score/Score.js";
 
-const stage = new Stage({ costumeNumber: 1 });
+const stage = new Stage({ costumeNumber: 4 });
 
 const sprites = {
   Play: new Play({
@@ -24,7 +24,7 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
-    size: 92.137115679,
+    size: 109.816937285,
     visible: true,
     layerOrder: 1,
   }),
@@ -33,7 +33,7 @@ const sprites = {
     y: 146,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 3,
+    costumeNumber: 1,
     size: 100,
     visible: true,
     layerOrder: 3,
@@ -74,7 +74,7 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 5,
-    size: 100,
+    size: 115.00000000000001,
     visible: false,
     layerOrder: 8,
   }),
@@ -84,7 +84,7 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 5,
-    size: 115.00000000000001,
+    size: 100,
     visible: false,
     layerOrder: 5,
   }),
@@ -103,7 +103,7 @@ const sprites = {
     y: 140,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 3,
+    costumeNumber: 2,
     size: 100,
     visible: false,
     layerOrder: 10,
@@ -113,7 +113,7 @@ const sprites = {
     y: 141,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 3,
+    costumeNumber: 6,
     size: 79.60000000000002,
     visible: true,
     layerOrder: 9,

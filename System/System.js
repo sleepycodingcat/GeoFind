@@ -58,6 +58,7 @@ export default class System extends Sprite {
   }
 
   *whenIReceiveWrong() {
+    this.stage.vars.health--;
     this.vars.gravity = 0;
     this.goto(0, 140);
     this.costume = "costume1";
@@ -75,10 +76,10 @@ export default class System extends Sprite {
     }
     this.visible = false;
     this.goto(0, 140);
-    this.stage.vars.health--;
   }
 
   *whenIReceiveRight() {
+    this.goto(0, 140);
     this.vars.gravity = 0;
     this.costume = "costume2";
     yield* this.startSound("right");
@@ -97,13 +98,5 @@ export default class System extends Sprite {
     this.goto(0, 140);
   }
 
-  *whenIReceiveGameOver() {
-    if (this.toString(this.stage.vars.gameover) === "yes") {
-      this.costume = "costume4";
-      this.visible = true;
-    } else {
-      this.costume = "costume3";
-      this.visible = true;
-    }
-  }
+  *whenIReceiveGameOver() {}
 }
