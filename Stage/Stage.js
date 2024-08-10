@@ -15,12 +15,12 @@ export default class Stage extends StageBase {
 
     this.costumes = [
       new Costume("Title page", "./Stage/costumes/Title page.svg", {
-        x: 241,
-        y: 252.70334000000003,
+        x: 244.06666056315106,
+        y: 252.70334000000005,
       }),
       new Costume("Main page", "./Stage/costumes/Main page.svg", {
         x: 241,
-        y: 252.70334000000003,
+        y: 252.70334000000005,
       }),
     ];
 
@@ -47,23 +47,16 @@ export default class Stage extends StageBase {
 
     this.vars.question = 0;
     this.vars.health = 4;
-    this.vars.Timer = 0.231;
+    this.vars.Timer = 51.117;
     this.vars.gameover = "no";
-
-    this.watchers.health = new Watcher({
-      label: "Health",
-      style: "normal",
-      visible: true,
-      value: () => this.vars.health,
-      x: 245,
-      y: 175,
-    });
+    this.vars.score = 0;
   }
 
   *whenGreenFlagClicked() {
     this.vars.question = 0;
     this.vars.health = 4;
     this.vars.gameover = "no";
+    this.vars.score = 0;
     this.costume = "Title page";
     while (true) {
       yield* this.playSoundUntilDone("8-bit-arcade-mode-158814");

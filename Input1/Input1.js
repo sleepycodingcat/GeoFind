@@ -133,6 +133,7 @@ export default class Input1 extends Sprite {
             yield* this.startSound("click");
             this.broadcast("right");
             this.broadcast("blink");
+            this.stage.vars.score++;
             yield* this.wait(1);
             this.stage.vars.question = "Q4";
             this.broadcast("4");

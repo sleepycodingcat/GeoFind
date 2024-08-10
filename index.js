@@ -13,6 +13,7 @@ import Input3 from "./Input3/Input3.js";
 import Input4 from "./Input4/Input4.js";
 import Layer from "./Layer/Layer.js";
 import System from "./System/System.js";
+import Score from "./Score/Score.js";
 
 const stage = new Stage({ costumeNumber: 1 });
 
@@ -23,18 +24,18 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 1,
-    size: 97.452292743,
+    size: 92.137115679,
     visible: true,
-    layerOrder: 2,
+    layerOrder: 1,
   }),
   Health: new Health({
     x: -123,
     y: 146,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
-    costumeNumber: 1,
+    costumeNumber: 3,
     size: 100,
-    visible: false,
+    visible: true,
     layerOrder: 3,
   }),
   Question: new Question({
@@ -65,7 +66,7 @@ const sprites = {
     costumeNumber: 5,
     size: 100,
     visible: false,
-    layerOrder: 8,
+    layerOrder: 7,
   }),
   Input3: new Input3({
     x: -111,
@@ -75,7 +76,7 @@ const sprites = {
     costumeNumber: 5,
     size: 100,
     visible: false,
-    layerOrder: 9,
+    layerOrder: 8,
   }),
   Input4: new Input4({
     x: 111,
@@ -83,7 +84,7 @@ const sprites = {
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 5,
-    size: 100,
+    size: 115.00000000000001,
     visible: false,
     layerOrder: 5,
   }),
@@ -95,17 +96,27 @@ const sprites = {
     costumeNumber: 1,
     size: 100,
     visible: false,
-    layerOrder: 1,
+    layerOrder: 2,
   }),
   System: new System({
     x: 0,
-    y: 0,
+    y: 140,
     direction: 90,
     rotationStyle: Sprite.RotationStyle.ALL_AROUND,
     costumeNumber: 3,
     size: 100,
     visible: false,
-    layerOrder: 7,
+    layerOrder: 10,
+  }),
+  Score: new Score({
+    x: 6,
+    y: 141,
+    direction: 90,
+    rotationStyle: Sprite.RotationStyle.ALL_AROUND,
+    costumeNumber: 3,
+    size: 79.60000000000002,
+    visible: true,
+    layerOrder: 9,
   }),
 };
 

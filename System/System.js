@@ -47,28 +47,54 @@ export default class System extends Sprite {
         this.whenIReceiveGameOver
       ),
     ];
+
+    this.vars.gravity = -140;
   }
 
   *whenGreenFlagClicked() {
-    this.goto(0, 0);
+    this.goto(0, 140);
     this.visible = false;
+    this.vars.gravity = 0;
   }
 
   *whenIReceiveWrong() {
+    this.vars.gravity = 0;
+    this.goto(0, 140);
     this.costume = "costume1";
     yield* this.startSound("disconnect");
     this.visible = true;
-    yield* this.wait(1);
+    while (
+      !(
+        this.toNumber(this.vars.gravity) === -140 ||
+        this.compare(this.vars.gravity, -140) < 0
+      )
+    ) {
+      this.vars.gravity -= 2;
+      this.y += this.toNumber(this.vars.gravity);
+      yield;
+    }
     this.visible = false;
+    this.goto(0, 140);
     this.stage.vars.health--;
   }
 
   *whenIReceiveRight() {
+    this.vars.gravity = 0;
     this.costume = "costume2";
     yield* this.startSound("right");
     this.visible = true;
-    yield* this.wait(1);
+    while (
+      !(
+        this.toNumber(this.vars.gravity) === -140 ||
+        this.compare(this.vars.gravity, -140) < 0
+      )
+    ) {
+      this.vars.gravity -= 2;
+      this.y += this.toNumber(this.vars.gravity);
+      yield;
+    }
     this.visible = false;
+    this.goto(0, 140);
   }
 
   *whenIReceiveGameOver() {

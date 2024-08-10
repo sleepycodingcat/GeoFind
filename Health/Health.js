@@ -91,5 +91,6 @@ export default class Health extends Sprite {
 
   *whengreaterthan() {
     this.stage.vars.health = 4;
+    this.stage.vars.score = 0;
   }
 }
